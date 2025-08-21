@@ -102,8 +102,14 @@ toggleBtn.addEventListener("click", () => {
 const contactBtn = document.getElementById("contactBtn");
 const contactModal = document.getElementById("contactModal");
 const closeModal = document.getElementById("closeModal");
+const getStartedBtn = document.getElementById("getStartedBtn"); // New button reference
 
 contactBtn.addEventListener("click", () => {
+  contactModal.classList.add("active");
+  contactModal.classList.remove("hidden");
+});
+
+getStartedBtn.addEventListener("click", () => { // New event listener for Get Started
   contactModal.classList.add("active");
   contactModal.classList.remove("hidden");
 });

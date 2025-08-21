@@ -34,7 +34,7 @@
 /* Logo */
 .logo img {
   display: block;
-  height:200px;
+  height:48vh;
 }
 
 /* Hero Section */
@@ -56,77 +56,92 @@
 /* Floating images */
 .float-img {
   position: absolute;
-  width: 10%; /* 10% of main image width, adjustable */
+  width: 10%; /* 10% of main image width, adjustable via media queries */
   height: auto;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.4s ease;
+  animation: float 3s ease-in-out infinite; /* Floating animation */
 }
 
-.float-img:hover {
-  transform: scale(1.1) rotate(3deg);
+/* Keyframes for floating effect */
+@keyframes float {
+  0%, 100% { transform: translateY(0); } /* Start and end at original position */
+  50% { transform: translateY(-10%); } /* Move up 10% of icon height */
+}
+
+/* Staggered animation for each icon */
+.img1 {
+  animation-delay: 0s; /* Instagram starts immediately */
+}
+
+.img2 {
+  animation-delay: 0.5s; /* Facebook starts after 0.5s */
+}
+
+.img3 {
+  animation-delay: 1s; /* YouTube starts after 1s */
 }
 
 /* Position icons relative to main image */
-/* Mobile (<640px) */
-@media (min-width:300px) and (max-width: 500px) {
+/* Mobile (300px–500px) */
+@media (min-width: 300px) and (max-width: 500px) {
   .img1 { /* Instagram - Top-left */
-    top: 35px; /* Offset from top */
-    left: 38px; /* Offset from left */
-    transform: translateY(-100%); /* Move above main image top */
+    top: -10%; /* 5% of main-img height */
+    left: 15%; /* 5% of main-img width */
+    transform: translateY(-100%); /* Move above top edge */
   }
 
   .img2 { /* Facebook - Bottom-left */
-    bottom: 18px; /* Offset from bottom */
-    left: 130px; /* Offset from left */
-    transform: translateY(100%); /* Move below main image bottom */
+    bottom: -15%; /* 2% of main-img height */
+    left: 40%; /* 20% of main-img width */
+    transform: translateY(100%); /* Move below bottom edge */
   }
 
   .img3 { /* YouTube - Top-right */
-    top: 90px; /* Offset from top */
-    right: 40px; /* Offset from right */
-    transform: translateY(-100%); /* Move above main image top */
+    top: 20%; /* 12% of main-img height */
+    right: 15%; /* 5% of main-img width */
+    transform: translateY(-100%); /* Move above top edge */
   }
 }
 
-/* Tablet (≥640px and <768px) */
+/* Tablet (600px–1023px) */
 @media (min-width: 600px) and (max-width: 1023px) {
   .img1 { /* Instagram - Top-left */
-    top: 35px; /* Your tablet value */
-    left: 50px; /* Your tablet value */
+    top: -10%; /* Adjusted to match mobile proportion */
+    left: 15%; /* Increased relative to width */
     transform: translateY(-100%);
   }
 
   .img2 { /* Facebook - Bottom-left */
-    bottom: 17px; /* Your tablet value */
-    left: 130px; /* Your tablet value */
+    bottom: -15%; /* Adjusted to match mobile proportion */
+    left: 40%; /* Adjusted relative to width */
     transform: translateY(100%);
   }
 
   .img3 { /* YouTube - Top-right */
-    top: 93px; /* Your tablet value */
-    right: 45px; /* Your tablet value */
+    top: 20%; /* Increased relative to height */
+    right: 15%; /* Increased relative to width */
     transform: translateY(-100%);
   }
 }
 
-/* Laptop (≥768px) */
+/* Laptop (≥800px) */
 @media (min-width: 800px) {
   .img1 { /* Instagram - Top-left */
-    top: 52px; /* Increased for larger screens */
-    left: 55px; /* Increased */
+    top: -10%; /* Increased for larger screens */
+    left: 15%; /* Increased */
     transform: translateY(-100%);
   }
 
   .img2 { /* Facebook - Bottom-left */
-    bottom: 30px; /* Increased */
-    left: 200px; /* Increased */
+    bottom: -15%; /* Increased */
+    left: 40%; /* Increased */
     transform: translateY(100%);
   }
 
   .img3 { /* YouTube - Top-right */
-    top: 130px; /* Increased */
-    right: 63px; /* Increased */
+    top: 20%; /* Increased */
+    right: 15%; /* Increased */
     transform: translateY(-100%);
   }
 }
