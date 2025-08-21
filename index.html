@@ -4,144 +4,128 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Marketing Agency</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
   <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Font Awesome CDN link-->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="font-arial text-gray-700 bg-gray-50 leading-relaxed">
   <!-- Navbar -->
-  <nav class="navbar">
-    <h1 class="logo"><img src="./images/logo.png" alt="ThoughtsMedia Digital" class="logo-img"></h1>
-    <div class="container nav-container">
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <!-- <li><a href="#contact">Contact</a></li> -->
+  <nav class="navbar fixed top-0 w-full z-[1000] bg-[#0051bc] shadow-md flex items-center justify-between h-[70px] px-4 sm:px-6">
+    <h1 class="logo"><img src="./images/logo.png" alt="ThoughtsMedia Digital" class="logo-img h-10 sm:h-16 md:h-20 w-auto block"></h1>
+    <div class="nav-container max-w-5xl flex items-center justify-end gap-5">
+      <ul class="nav-links hidden absolute top-[70px] right-0 bg-[#0051bc] p-5 w-48 shadow-md md:flex md:static md:bg-transparent md:p-0 md:w-auto md:shadow-none list-none gap-5" id="nav-links">
+        <li><a href="#home" class="text-white font-medium px-0 hover:text-gray-200 transition-colors duration-300 relative block md:inline">Home</a></li>
+        <li><a href="#services" class="text-white font-medium px-0 hover:text-gray-200 transition-colors duration-300 relative block md:inline">Services</a></li>
+        <li><a href="#about" class="text-white font-medium px-0 hover:text-gray-200 transition-colors duration-300 relative block md:inline">About</a></li>
       </ul>
-      <button class="menu-btn" id="menu-btn">☰</button>
+      <button class="menu-btn md:hidden text-2xl bg-transparent border-none text-white" id="menu-btn">☰</button>
     </div>
   </nav>
 
   <!-- Hero Section -->
-<section id="home" class="hero">
-  <div class="hero-content" data-aos="fade-up">
-    <h1>Our Thoughts Your Growth</h1>
-    <p>We help you boost your online presence with modern digital marketing solutions.</p>
-    <a href="#contact" class="btn">Get Started</a>
-  </div>
-
-  <!-- Hero image container -->
-  <div class="hero-image" data-aos="fade-left">
-    <img src="images/thoughts.png" alt="Digital Growth" class="main-img" />
-
-<!-- Extra floating images with links -->
-<a href="#" onclick="openApp(
-  'instagram://user?username=brucely_thoughts', 
-  'https://www.instagram.com/brucely_thoughts?igsh=MWZlMnF2YWJ2cGt6eA%3D%3D&utm_source=qr'
-)">
-  <img src="images/insta.png" alt="Instagram" class="float-img img1" />
-</a>
-
-<!-- Facebook -->
-<a href="#" onclick="openApp(
-  'fb://page/123456789', 
-  'https://www.facebook.com/share/19rtNXgBSY/?mibextid=wwXIfr'
-)">
-  <img src="images/facebook.png" alt="Facebook" class="float-img img2" />
-</a>
-
-<!-- YouTube -->
-<a href="#" onclick="openApp(
-  'vnd.youtube://channel/UCxxxxxxxx', 
-  'https://youtube.com/@brucelythoughtspodcast?si=ImkDHHJ0bnjev8ep'
-)">
-  <img src="images/youtube.png" alt="YouTube" class="float-img img3" />
-</a>
-
-  </div>
-</section>
-
-
-<!-- Floating Sidebar -->
-<div class="floating-sidebar closed" id="floatingSidebar">
-  <div class="sidebar-content">
-    <!-- Contact -->
-    <div class="sidebar-item" id="contactBtn" title="Contact">
-      <i class="fa-solid fa-id-card"></i>
+  <section id="home" class="hero bg-white flex items-center py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 shadow-lg min-h-[80vh] sm:min-h-[90vh] md:min-h-screen">
+    <div class="container mx-auto max-w-5xl flex flex-col md:flex-row items-center gap-6 sm:gap-8">
+      <div class="hero-content flex-1 text-center sm:text-left pt-12 sm:pt-16 md:pt-0" data-aos="fade-up">
+        <h1 class="hero-title text-2xl sm:text-3xl md:text-5xl font-bold mb-4 sm:mb-5">Our Thoughts Your Growth</h1>
+        <p class="text-base sm:text-lg md:text-2xl mb-6 sm:mb-8">We help you boost your online presence with modern digital marketing solutions.</p>
+        <a href="#contact" class="btn">Get Started</a>
+      </div>
+<div class="hero-image flex-1 flex justify-center items-center relative" data-aos="fade-left">
+  <img src="images/thoughts.png" alt="Digital Growth" class="main-img w-full max-w-[55%] sm:max-w-[60%] md:max-w-[50%] h-auto rounded-2xl shadow-2xl mx-auto" />
+  <a href="#" onclick="openApp('instagram://user?username=brucely_thoughts', 'https://www.instagram.com/brucely_thoughts?igsh=MWZlMnF2YWJ2cGt6eA%3D%3D&utm_source=qr')" class="float-img-link">
+    <img src="images/insta.png" alt="Instagram" class="float-img img1" />
+  </a>
+  <a href="#" onclick="openApp('fb://page/123456789', 'https://www.facebook.com/share/19rtNXgBSY/?mibextid=wwXIfr')" class="float-img-link">
+    <img src="images/facebook.png" alt="Facebook" class="float-img img2" />
+  </a>
+  <a href="#" onclick="openApp('vnd.youtube://channel/UCxxxxxxxx', 'https://youtube.com/@brucelythoughtspodcast?si=ImkDHHJ0bnjev8ep')" class="float-img-link">
+    <img src="images/youtube.png" alt="YouTube" class="float-img img3" />
+  </a>
+</div>
     </div>
-    <!-- Call -->
-    <a class="sidebar-item" href="tel:+918019627590" title="Call">
-      <i class="fa-solid fa-phone-volume"></i>
-    </a>
-    <!-- WhatsApp -->
-    <a class="sidebar-item" href="https://wa.me/message/JNBYHAWDWGD3D1" target="_blank" title="WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-    </a>
+  </section>
+
+  <!-- Floating Sidebar -->
+  <div class="floating-sidebar closed fixed right-0 top-[40%] -translate-y-1/2 bg-[#0051bc] rounded-l-3xl shadow-2xl z-[1000] flex items-center transition-all duration-400" id="floatingSidebar">
+    <div class="sidebar-content flex flex-col gap-4 p-4">
+      <div class="sidebar-item" id="contactBtn" title="Contact">
+        <i class="fa-solid fa-id-card"></i>
+      </div>
+      <a class="sidebar-item" href="tel:+918019627590" title="Call">
+        <i class="fa-solid fa-phone-volume"></i>
+      </a>
+      <a class="sidebar-item" href="https://wa.me/message/JNBYHAWDWGD3D1" target="_blank" title="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+    <button class="toggle-btn bg-[#2563eb] text-white border-none cursor-pointer px-3 py-2.5 rounded-l-2xl text-lg h-[45px] ml-auto" id="toggleBtn">☰</button>
   </div>
-  <!-- Toggle button always visible -->
-  <button class="toggle-btn" id="toggleBtn">☰</button>
-</div>
 
-<!-- Contact Modal -->
-<div class="contact-modal" id="contactModal">
-  <div class="modal-content">
-    <span class="close-modal" id="closeModal">&times;</span>
-    <h2><i class="fa-regular fa-address-book"></i> Contact Us</h2>
-    <form class="styled-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="mobile-no" placeholder="Your Mobile Number" required>
-      <textarea placeholder="Your Message" rows="4" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
+  <!-- Contact Modal -->
+  <div class="contact-modal hidden fixed inset-0 bg-black/60 flex justify-center items-center z-[2000]" id="contactModal">
+    <div class="modal-content bg-white p-6 sm:p-8 rounded-3xl w-full max-w-[380px] shadow-2xl" data-aos="zoom-in">
+      <span class="close-modal float-right text-2xl font-bold text-gray-600 cursor-pointer hover:text-[#2563eb]" id="closeModal">&times;</span>
+      <h2 class="text-2xl font-bold mb-4"><i class="fa-regular fa-address-book mr-2"></i>Contact Us</h2>
+      <form class="styled-form flex flex-col gap-4 mt-4">
+        <input type="text" placeholder="Your Name" required class="p-3 border border-gray-300 rounded-lg text-sm focus:border-[#2563eb] focus:shadow-md focus:outline-none">
+        <input type="email" placeholder="Your Email" required class="p-3 border border-gray-300 rounded-lg text-sm focus:border-[#2563eb] focus:shadow-md focus:outline-none">
+        <input type="tel" placeholder="Your Mobile Number" required class="p-3 border border-gray-300 rounded-lg text-sm focus:border-[#2563eb] focus:shadow-md focus:outline-none">
+        <textarea placeholder="Your Message" rows="4" required class="p-3 border border-gray-300 rounded-lg text-sm focus:border-[#2563eb] focus:shadow-md focus:outline-none"></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
   </div>
-</div>
-
-
-
-
 
   <!-- Services -->
-<section id="services" class="section">
-  <h2 class="section-title">What We Actually Do ?</h2>
-  <div class="services-wrapper">
-    <button class="slide-btn prev">&#10094;</button>
-    <div class="services-carousel">
-      <div class="card"> <h3>SEO Optimization</h3> <p>Improve your website’s visibility on search engines and attract more clients organically.</p></div>
-      <div class="card"> <h3>Social Media Marketing</h3> <p>Build your brand and engage with your audience across all social platforms.</p></div>
-      <div class="card"> <h3>Content Strategy</h3> <p>Create meaningful content strategies that convert and grow your digital presence.</p></div>
-      <div class="card"> <h3>Ad Films</h3> <p>Engaging ad films to showcase your brand and connect with your audience.</p></div>
-      <div class="card"> <h3>Web Development & Hosting</h3> <p>Complete website design, development, and hosting solutions.</p></div>
-      <div class="card"> <h3>Digital Advertisements</h3> <p>Reach your customers with targeted digital ads that convert.</p></div>
+  <section id="services" class="section py-16 px-4 text-center">
+    <div class="container mx-auto max-w-5xl">
+      <h2 class="section-title text-2xl sm:text-3xl font-bold mb-10 text-gray-900 underline">What We Actually Do?</h2>
+      <div class="services-wrapper relative overflow-hidden">
+        <button class="slide-btn prev">&#10094;</button>
+        <div class="services-carousel flex transition-transform duration-500 ease-in-out">
+          <div class="card"><h3 class="text-xl font-bold text-[#2563eb] mb-4">SEO Optimization</h3><p>Improve your website’s visibility on search engines and attract more clients organically.</p></div>
+          <div class="card"><h3 class="text-xl font-bold text-[#2563eb] mb-4">Social Media Marketing</h3><p>Build your brand and engage with your audience across all social platforms.</p></div>
+          <div class="card"><h3 class="text-xl font-bold text-[#2563eb] mb-4">Content Strategy</h3><p>Create meaningful content strategies that convert and grow your digital presence.</p></div>
+          <div class="card"><h3 class="text-xl font-bold text-[#2563eb] mb-4">Ad Films</h3><p>Engaging ad films to showcase your brand and connect with your audience.</p></div>
+          <div class="card"><h3 class="text-xl font-bold text-[#2563eb] mb-4">Web Development & Hosting</h3><p>Complete website design, development, and hosting solutions.</p></div>
+          <div class="card"><h3 class="text-xl font-bold text-[#2563eb] mb-4">Digital Advertisements</h3><p>Reach your customers with targeted digital ads that convert.</p></div>
+        </div>
+        <button class="slide-btn next">&#10095;</button>
+      </div>
     </div>
-    <button class="slide-btn next">&#10095;</button>
-  </div>
-</section>
-
+  </section>
 
   <!-- About -->
-  <section id="about" class="section about">
-    <h2 class="section-title">About Us</h2>
-    <p data-aos="zoom-in">We are a team of passionate digital marketers committed to helping businesses grow online. With our proven strategies, your brand will reach the right audience at the right time.</p>
+  <section id="about" class="section about py-16 px-4 bg-gray-100 rounded-3xl">
+    <div class="container mx-auto max-w-5xl">
+      <h2 class="section-title text-2xl sm:text-3xl font-bold mb-10 text-gray-900 underline">About Us</h2>
+      <p data-aos="zoom-in" class="text-lg sm:text-xl">We are a team of passionate digital marketers committed to helping businesses grow online. With our proven strategies, your brand will reach the right audience at the right time.</p>
+    </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section">
-    <h2 class="section-title">Get in Touch</h2>
-    <form class="contact-form" data-aos="fade-up">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
+  <section id="contact" class="section py-16 px-4">
+    <div class="container mx-auto max-w-5xl">
+      <h2 class="section-title text-2xl sm:text-3xl font-bold mb-10 text-gray-900 underline">Get in Touch</h2>
+      <form class="contact-form bg-white p-6 rounded-3xl shadow-md flex flex-col gap-4 max-w-lg mx-auto" data-aos="fade-up">
+        <input type="text" placeholder="Your Name" required class="p-3 border border-gray-300 rounded-lg text-sm focus:border-[#2563eb] focus:shadow-md focus:outline-none">
+        <input type="email" placeholder="Your Email" required class="p-3 border border-gray-300 rounded-lg text-sm focus:border-[#2563eb] focus:shadow-md focus:outline-none">
+        <textarea placeholder="Your Message" rows="5" required class="p-3 border border-gray-300 rounded-lg text-sm focus:border-[#2563eb] focus:shadow-md focus:outline-none"></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 Naoh Digital Marketing Agency. All rights reserved.</p>
+  <footer class="footer bg-[#2563eb] text-white text-center py-5 mt-10">
+    <div class="container mx-auto max-w-5xl">
+      <p class="text-sm sm:text-base">© 2025 Naoh Digital Marketing Agency. All rights reserved.</p>
+    </div>
   </footer>
 
   <!-- Scripts -->

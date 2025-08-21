@@ -9,42 +9,50 @@ const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 
 menuBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
+  navLinks.classList.toggle("hidden");
 });
 
 // Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function(e) {
     e.preventDefault();
+    navLinks.classList.add("hidden"); // Close menu on link click
     document.querySelector(this.getAttribute("href")).scrollIntoView({
       behavior: "smooth"
     });
   });
 });
 
-
+// Services Carousel
 const carousel = document.querySelector(".services-carousel");
 const cards = document.querySelectorAll(".card");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".slide-btn.prev");
+const nextBtn = document.querySelector(".slide-btn.next");
 
 let index = 0;
-const visibleCards = 3;
+let visibleCards = window.innerWidth < 768 ? 1 : 3; // 1 card on mobile, 3 on larger screens
 const totalCards = cards.length;
 
 function updateCarousel() {
-  const cardWidth = cards[0].offsetWidth + 20; // include margin
+  const cardWidth = cards[0].offsetWidth + 20; // Include margin
   carousel.style.transform = `translateX(-${index * cardWidth}px)`;
 }
 
+// Update visibleCards on window resize
+window.addEventListener("resize", () => {
+  visibleCards = window.innerWidth < 768 ? 1 : 3;
+  index = Math.min(index, totalCards - visibleCards);
+  updateCarousel();
+});
+
 // Next & Prev buttons
 nextBtn.addEventListener("click", () => {
-  index = (index + 1) % (totalCards - visibleCards + 1);
+  index = Math.min(index + 1, totalCards - visibleCards);
   updateCarousel();
 });
 
 prevBtn.addEventListener("click", () => {
-  index = (index - 1 + (totalCards - visibleCards + 1)) % (totalCards - visibleCards + 1);
+  index = Math.max(index - 1, 0);
   updateCarousel();
 });
 
@@ -66,17 +74,14 @@ document.querySelector(".services-wrapper").addEventListener("mouseleave", () =>
   }, 3000);
 });
 
-//social media redirection
-
+// Social Media Redirection
 function openApp(appUrl, webUrl) {
-  // Try opening the app
   let start = Date.now();
   let iframe = document.createElement("iframe");
   iframe.style.display = "none";
   iframe.src = appUrl;
   document.body.appendChild(iframe);
 
-  // If after 800ms app didn’t open → fallback to browser
   setTimeout(() => {
     if (Date.now() - start < 1200) {
       window.open(webUrl, "_blank");
@@ -85,8 +90,7 @@ function openApp(appUrl, webUrl) {
   }, 800);
 }
 
-
-//sidebar function
+// Floating Sidebar
 const sidebar = document.getElementById("floatingSidebar");
 const toggleBtn = document.getElementById("toggleBtn");
 
@@ -101,15 +105,17 @@ const closeModal = document.getElementById("closeModal");
 
 contactBtn.addEventListener("click", () => {
   contactModal.classList.add("active");
+  contactModal.classList.remove("hidden");
 });
 
 closeModal.addEventListener("click", () => {
   contactModal.classList.remove("active");
+  contactModal.classList.add("hidden");
 });
 
 window.addEventListener("click", (e) => {
   if (e.target === contactModal) {
     contactModal.classList.remove("active");
+    contactModal.classList.add("hidden");
   }
 });
-
