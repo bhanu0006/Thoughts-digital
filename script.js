@@ -125,3 +125,58 @@ window.addEventListener("click", (e) => {
     contactModal.classList.add("hidden");
   }
 });
+
+
+
+//whatsapp
+
+function openWhatsApp() {
+    let phone = "919876543210"; // change to your number
+    let message = "Hello";      // optional message
+
+    // Try to open WhatsApp app (mobile/desktop)
+    let appLink = `whatsapp://send?phone=${phone}&text=${encodeURIComponent(message)}`;
+    let webLink = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+
+    // Create a hidden iframe to trigger WhatsApp app
+    let iframe = document.createElement("iframe");
+    iframe.style.display = "none";
+    iframe.src = appLink;
+    document.body.appendChild(iframe);
+
+    // If app not installed, after 1s → fallback to web
+    setTimeout(() => {
+      window.open(webLink, "_blank");
+      document.body.removeChild(iframe);
+    }, 1000);
+  }
+
+
+  //why digital marketing is need.
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.querySelector('.why-digital-marketing');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(section);
+  });
+
+  // Start Your Digital Journey Button
+const ctaButton = document.querySelector(".cta-button");
+
+ctaButton.addEventListener("click", (e) => {
+  e.preventDefault(); // Prevent default anchor behavior
+  contactModal.classList.add("active");
+  contactModal.classList.remove("hidden");
+});
+
+  
+
