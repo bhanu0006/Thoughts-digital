@@ -643,3 +643,34 @@
     animation-duration: 10s; /* faster for mobile */
   }
 }
+
+/* Footer */
+.drop-shadow-md {
+    text-shadow: 0px 2px 6px rgba(0,0,0,0.7);
+  }
+
+  /* Slide up on load */
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-slideUp {
+    animation: slideUp 1.3s ease-out;
+  }
+
+  /* Fade + slight slide from right */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .animate-fadeInUp {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  /* Delay utilities */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-700 { animation-delay: 0.7s; }
+  .delay-900 { animation-delay: 0.9s; }
