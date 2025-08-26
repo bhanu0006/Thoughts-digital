@@ -102,14 +102,22 @@ toggleBtn.addEventListener("click", () => {
 const contactBtn = document.getElementById("contactBtn");
 const contactModal = document.getElementById("contactModal");
 const closeModal = document.getElementById("closeModal");
-const getStartedBtn = document.getElementById("getStartedBtn"); // New button reference
+const getStartedBtn = document.getElementById("getStartedBtn");
+const contactForm = document.getElementById("contactForm");
+
+// Your WhatsApp number
+const whatsappNumber = "+918019627590";
+const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}`;
+
+// Simple device detection
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 contactBtn.addEventListener("click", () => {
   contactModal.classList.add("active");
   contactModal.classList.remove("hidden");
 });
 
-getStartedBtn.addEventListener("click", () => { // New event listener for Get Started
+getStartedBtn.addEventListener("click", () => {
   contactModal.classList.add("active");
   contactModal.classList.remove("hidden");
 });
@@ -124,6 +132,56 @@ window.addEventListener("click", (e) => {
     contactModal.classList.remove("active");
     contactModal.classList.add("hidden");
   }
+});
+
+// Form submission handling
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  // Get form fields
+  const name = contactForm.querySelector('input[name="name"]').value.trim();
+  const email = contactForm.querySelector('input[name="email"]').value.trim();
+  const phone = contactForm.querySelector('input[name="phone"]').value.trim();
+  const message = contactForm.querySelector('textarea[name="message"]').value.trim();
+
+  // Validate all fields are filled
+  if (!name || !email || !phone || !message) {
+    alert("Please fill in all fields before submitting.");
+    return;
+  }
+
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  // Validate phone format
+  const phoneRegex = /^\+?\d{10,15}$/;
+  if (!phoneRegex.test(phone)) {
+    alert("Please enter a valid phone number (10-15 digits).");
+    return;
+  }
+
+  // Construct WhatsApp message
+  const whatsappMessage = `New Lead📩:%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0APhone: ${encodeURIComponent(phone)}%0AMessage: ${encodeURIComponent(message)}`;
+
+  // Create full WhatsApp URL with pre-filled message
+  const fullUrl = `${whatsappUrl}&text=${whatsappMessage}`;
+
+  // Log URL for debugging
+  console.log("WhatsApp URL:", fullUrl);
+
+  // Open WhatsApp link
+  // On mobile, this should open the WhatsApp app; on desktop, it should open WhatsApp Web
+  window.open(fullUrl, '_blank');
+
+  // Show success message and reset form
+  alert("Thank you for Your Time! We'll contact you via WhatsApp.");
+  contactForm.reset();
+  contactModal.classList.remove("active");
+  contactModal.classList.add("hidden");
 });
 
 
@@ -179,4 +237,5 @@ ctaButton.addEventListener("click", (e) => {
 });
 
   
+
 
