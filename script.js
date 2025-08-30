@@ -23,6 +23,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+//navbar
+  let lastScrollTop = 0;
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down → hide navbar
+      navbar.style.transform = "translateY(-100%)";
+    } else {
+      // Scrolling up → show navbar
+      navbar.style.transform = "translateY(0)";
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // avoid negative values
+  });
+
 // Services Carousel
 const carousel = document.querySelector(".services-carousel");
 const cards = document.querySelectorAll(".card");
