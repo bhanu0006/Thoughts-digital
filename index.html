@@ -28,37 +28,55 @@
 </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="hero bg-white flex items-center py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 shadow-lg min-h-[80vh] sm:min-h-[90vh] md:min-h-screen">
-    <div class="container mx-auto max-w-5xl flex flex-col md:flex-row items-center gap-6 sm:gap-8">
-      <div class="hero-content flex-1 text-center sm:text-left pt-12 sm:pt-16 md:pt-0" data-aos="fade-up">
-<h1 class="hero-title text-2xl sm:text-3xl md:text-5xl font-bold mb-4 sm:mb-5 leading-tight">
-  <!-- Mobile version -->
-  <span class="block sm:hidden text-left ml-10">Our Thoughts</span>
-  <span class="block sm:hidden text-center ml-20">Your Growth!</span>
+<section id="home" class="hero bg-white flex items-center py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 shadow-lg min-h-[80vh] sm:min-h-[90vh] md:min-h-screen">
+  <div class="container mx-auto max-w-5xl flex flex-col md:flex-row items-center gap-6 sm:gap-8">
+    
+    <!-- Hero Content -->
+    <div class="hero-content flex-1 text-center sm:text-left pt-12 sm:pt-16 md:pt-0" data-aos="fade-up">
+      <h1 class="hero-title text-2xl sm:text-3xl md:text-5xl font-bold mb-4 sm:mb-5 leading-tight">
+        <!-- Mobile version -->
+        <span class="block sm:hidden text-center ml-15">Our Thoughts</span>
+        <span class="block sm:hidden text-center ml-15 text-[2.8rem]">Your Growth!</span>
 
-  <!-- Tablet & Laptop version -->
-  <span class="hidden sm:inline">Our Thoughts Your Growth!</span>
-</h1>
-
-
-        <p class="text-base sm:text-lg md:text-2xl mb-6 sm:mb-8">We help you boost your online presence with modern digital marketing solutions.</p>
-        <button id="getStartedBtn" class="btn ml-10 sm:ml-0">Get Started</button>
-
-      </div>
-<div class="hero-image flex-1 flex justify-center items-center relative" data-aos="fade-left">
-  <img src="images/thoughts.png" alt="Digital Growth" class="main-img w-full max-w-[55%] sm:max-w-[60%] md:max-w-[50%] h-auto rounded-2xl shadow-2xl mx-auto" />
-  <a href="#" onclick="openApp('instagram://user?username=brucely_thoughts', 'https://www.instagram.com/brucely_thoughts?igsh=MWZlMnF2YWJ2cGt6eA%3D%3D&utm_source=qr')" class="float-img-link">
-    <img src="images/insta.png" alt="Instagram" class="float-img img1" />
-  </a>
-  <a href="#" onclick="openApp('fb://page/123456789', 'https://www.facebook.com/share/19rtNXgBSY/?mibextid=wwXIfr')" class="float-img-link">
-    <img src="images/facebook.png" alt="Facebook" class="float-img img2" />
-  </a>
-  <a href="#" onclick="openApp('vnd.youtube://channel/UCxxxxxxxx', 'https://youtube.com/@brucelythoughtspodcast?si=ImkDHHJ0bnjev8ep')" class="float-img-link">
-    <img src="images/youtube.png" alt="YouTube" class="float-img img3" />
-  </a>
-</div>
+        <!-- Tablet & Laptop version -->
+        <span class="hidden sm:inline">Our Thoughts Your Growth!</span>
+      </h1>
+      <p class="text-[9px] sm:text-lg md:text-xl mb-0.5 sm:mb-3 text-left leading-snug">
+        At Thoughts Media Digital, we specialize in content strategy that drives growth.
+      </p>
+      <p class="text-[9px] sm:text-lg md:text-xl mb-2 sm:mb-3 text-left leading-snug">
+        From reels to reach, we craft campaigns that make your brand unforgettable.
+      </p>
+      
+      <!-- Top Button (Visible only on Tablet & Laptop) -->
+      <button id="getStartedBtn" class="btn ml-10 sm:ml-0 hidden sm:inline-block">
+        Get Started
+      </button>
     </div>
-  </section>
+
+    <!-- Hero Image -->
+    <div class="hero-image flex-1 flex justify-center items-center relative" data-aos="fade-left">
+      <img src="images/thoughts.png" alt="Digital Growth" class="main-img w-full max-w-[55%] sm:max-w-[60%] md:max-w-[50%] h-auto rounded-2xl shadow-2xl mx-auto" />
+      
+      <!-- Floating Social Links -->
+      <a href="#" onclick="openApp('instagram://user?username=brucely_thoughts', 'https://www.instagram.com/brucely_thoughts?igsh=MWZlMnF2YWJ2cGt6eA%3D%3D&utm_source=qr')" class="float-img-link">
+        <img src="images/insta.png" alt="Instagram" class="float-img img1" />
+      </a>
+      <a href="#" onclick="openApp('fb://page/123456789', 'https://www.facebook.com/share/19rtNXgBSY/?mibextid=wwXIfr')" class="float-img-link">
+        <img src="images/facebook.png" alt="Facebook" class="float-img img2" />
+      </a>
+      <a href="#" onclick="openApp('vnd.youtube://channel/UCxxxxxxxx', 'https://youtube.com/@brucelythoughtspodcast?si=ImkDHHJ0bnjev8ep')" class="float-img-link">
+        <img src="images/youtube.png" alt="YouTube" class="float-img img3" />
+      </a>
+    </div>
+          <!-- Mobile Only Text + Button -->
+      <div class="block sm:hidden w-full text-center mt-4">
+        <p class="text-xs font-medium mb-6">Our focus is clearvisibility, engagement, and real results.</p>
+        <button id="getStartedBtnMobile" class="btn rounded-3xl">Get Started</button>
+      </div>
+  </div>
+</section>
+
 
 <!-- Floating Sidebar -->
 <div class="floating-sidebar closed fixed right-0 top-[40%] -translate-y-1/2  rounded-l-3xl shadow-2xl z-[1000] flex items-center transition-all duration-400" id="floatingSidebar">
@@ -168,19 +186,15 @@
   <!-- Services -->
   <section id="services" class="section py-16 px-4 text-center">
     <div class="container mx-auto max-w-5xl">
-<h2 class="paint-title text-white font-bold text-2xl sm:text-3xl md:text-4xl">
-  What We Actually Do?
-</h2>
-
-
-      <div class="services-wrapper relative overflow-hidden">
-        <button class="slide-btn prev">&#10094;</button>
+      <h2 class="paint-title text-white font-bold text-2xl sm:text-3xl md:text-4xl">What We Actually Do?</h2>
+        <div class="services-wrapper relative overflow-hidden">
+          <button class="slide-btn prev">&#10094;</button>
         <div class="services-carousel flex transition-transform duration-500 ease-in-out">
-          <div class="card"><h3 class="text-xl font-bold text-[#2563eb] mb-4">SEO Optimization</h3><p>Improve your website’s visibility on search engines and attract more clients organically.</p></div>
-          <div class="card"><h3 class="text-xl font-bold text-[#2563eb] mb-4">Social Media Marketing</h3><p>Build your brand and engage with your audience across all social platforms.</p></div>
-          <div class="card"><h3 class="text-xl font-bold text-[#2563eb] mb-4">Content Strategy</h3><p>Create meaningful content strategies that convert and grow your digital presence.</p></div>
           <div class="card"><h3 class="text-xl font-bold text-[#2563eb] mb-4">Influencer Marketing</h3><p>Leverage the power of influencers to boost your brand visibility and reach your target audience effectively.</p></div>
+          <div class="card"><h3 class="text-xl font-bold text-[#2563eb] mb-4">Social Media Marketing</h3><p>Build your brand and engage with your audience across all social platforms.</p></div>
           <div class="card"><h3 class="text-xl font-bold text-[#2563eb] mb-4">Web Development & Hosting</h3><p>Complete website design, development, and hosting solutions.</p></div>
+          <div class="card"><h3 class="text-xl font-bold text-[#2563eb] mb-4">Content Strategy</h3><p>Create meaningful content strategies that convert and grow your digital presence.</p></div>
+          <div class="card"><h3 class="text-xl font-bold text-[#2563eb] mb-4">SEO Optimization</h3><p>Improve your website’s visibility on search engines and attract more clients organically.</p></div>
           <div class="card"><h3 class="text-xl font-bold text-[#2563eb] mb-4">Digital Advertisements</h3><p>Reach your customers with targeted digital ads that convert.</p></div>
         </div>
         <button class="slide-btn next">&#10095;</button>
@@ -275,10 +289,10 @@
     <!-- Fixed Main Clients -->
     <div class="main-clients flex justify-center gap-6 mb-10 flex-wrap">
       <div class="client-logo-box"><img src="images/frnd app.png" alt="Frnd App Logo" class="client-logo"></div>
-      <div class="client-logo-box"><img src="images/duce.png" alt="Duce Logo" class="client-logo"></div>
-      <div class="client-logo-box"><img src="images/chennai shoopping.png" alt="Chennai Shopping Logo" class="client-logo"></div>
-      <div class="client-logo-box"><img src="images/dostt.png" alt="Dostt Logo" class="client-logo"></div>
-      <div class="client-logo-box"><img src="images/chen jewellers.png" alt="Chen Jewellers Logo" class="client-logo"></div>
+      <div class="client-logo-box"><img src="images/duce.png" alt="Duce Logo" class="client-logo mt-5 w-[220px]"></div>
+      <div class="client-logo-box"><img src="images/chennai shoopping.png" alt="Chennai Shopping Logo" class="client-logo  w-[230px]"></div>
+      <div class="client-logo-box"><img src="images/nerchuko.png" alt="Nerchuko Logo" class="client-logo mt-5"></div>
+      <div class="client-logo-box"><img src="images/jawa.png" alt="Jawa Logo" class="client-logo"></div>
     </div>
 
     <!-- Scrolling Row -->
@@ -287,39 +301,39 @@
         
         <!-- All logos (Set 1) -->
         <div class="client-logo-box"><img src="images/v ed.png" alt="V ED Logo" class="client-logo"></div>
-        <div class="client-logo-box"><img src="images/ultimate.png" alt="Ultimate Logo" class="client-logo"></div>
-        <div class="client-logo-box"><img src="images/sriram ias.png" alt="Sriram IAS Logo" class="client-logo"></div>
+        <div class="client-logo-box"><img src="images/ultimate.png" alt="Ultimate Logo" class="client-logo mb-5"></div>
+        <div class="client-logo-box"><img src="images/sriram ias.png" alt="Sriram IAS Logo" class="client-logo mb-5"></div>
         <div class="client-logo-box"><img src="images/sri balaji.png" alt="Sri Balaji Logo" class="client-logo"></div>
         <div class="client-logo-box"><img src="images/pii.png" alt="PII Logo" class="client-logo"></div>
         <div class="client-logo-box"><img src="images/pavitra.png" alt="Pavitra Logo" class="client-logo"></div>
         <div class="client-logo-box"><img src="images/new byte.png" alt="New Byte Logo" class="client-logo"></div>
-        <div class="client-logo-box"><img src="images/nerchuko.png" alt="Nerchuko Logo" class="client-logo"></div>
+        <div class="client-logo-box"><img src="images/dostt.png" alt="Dostt Logo" class="client-logo"></div>
         <div class="client-logo-box"><img src="images/jr.png" alt="JR Logo" class="client-logo"></div>
         <div class="client-logo-box"><img src="images/irsise.png" alt="Irsise Logo" class="client-logo"></div>
         <div class="client-logo-box"><img src="images/gvb.png" alt="GVB Logo" class="client-logo"></div>
-        <div class="client-logo-box"><img src="images/grace.png" alt="Grace Logo" class="client-logo"></div>
-        <div class="client-logo-box"><img src="images/tb.png" alt="TB Logo" class="client-logo"></div>
-        <div class="client-logo-box"><img src="images/vmr.png" alt="VMR Logo" class="client-logo"></div>
-        <div class="client-logo-box"><img src="images/jawa.png" alt="Jawa Logo" class="client-logo"></div>
+        <div class="client-logo-box"><img src="images/grace.png" alt="Grace Logo" class="client-logo mb-5"></div>
+        <div class="client-logo-box"><img src="images/tb.png" alt="TB Logo" class="client-logo1 mt-20"></div>
+        <div class="client-logo-box"><img src="images/vmr.png" alt="VMR Logo" class="client-logo mb-10"></div>
+        <div class="client-logo-box"><img src="images/chen jewellers.png" alt="Chen Jewellers Logo" class="client-logo mt-5 w-[200px]"></div>
         <div class="client-logo-box"><img src="images/nandus.png" alt="Nandus Logo" class="client-logo"></div>
         <div class="client-logo-box"><img src="images/dma.png" alt="DMA Logo" class="client-logo"></div>
         
         <!-- Duplicate all logos again (Set 2 for infinite loop) -->
         <div class="client-logo-box"><img src="images/v ed.png" alt="V ED Logo" class="client-logo"></div>
-        <div class="client-logo-box"><img src="images/ultimate.png" alt="Ultimate Logo" class="client-logo"></div>
-        <div class="client-logo-box"><img src="images/sriram ias.png" alt="Sriram IAS Logo" class="client-logo"></div>
+        <div class="client-logo-box"><img src="images/ultimate.png" alt="Ultimate Logo" class="client-logo mb-5"></div>
+        <div class="client-logo-box"><img src="images/sriram ias.png" alt="Sriram IAS Logo" class="client-logo mb-5"></div>
         <div class="client-logo-box"><img src="images/sri balaji.png" alt="Sri Balaji Logo" class="client-logo"></div>
         <div class="client-logo-box"><img src="images/pii.png" alt="PII Logo" class="client-logo"></div>
         <div class="client-logo-box"><img src="images/pavitra.png" alt="Pavitra Logo" class="client-logo"></div>
         <div class="client-logo-box"><img src="images/new byte.png" alt="New Byte Logo" class="client-logo"></div>
-        <div class="client-logo-box"><img src="images/nerchuko.png" alt="Nerchuko Logo" class="client-logo"></div>
+        <div class="client-logo-box"><img src="images/dostt.png" alt="Dostt Logo" class="client-logo"></div>
         <div class="client-logo-box"><img src="images/jr.png" alt="JR Logo" class="client-logo"></div>
         <div class="client-logo-box"><img src="images/irsise.png" alt="Irsise Logo" class="client-logo"></div>
         <div class="client-logo-box"><img src="images/gvb.png" alt="GVB Logo" class="client-logo"></div>
-        <div class="client-logo-box"><img src="images/grace.png" alt="Grace Logo" class="client-logo"></div>
-        <div class="client-logo-box"><img src="images/tb.png" alt="TB Logo" class="client-logo"></div>
-        <div class="client-logo-box"><img src="images/vmr.png" alt="VMR Logo" class="client-logo"></div>
-        <div class="client-logo-box"><img src="images/jawa.png" alt="Jawa Logo" class="client-logo"></div>
+        <div class="client-logo-box"><img src="images/grace.png" alt="Grace Logo" class="client-logo mb-5"></div>
+        <div class="client-logo-box"><img src="images/tb.png" alt="TB Logo" class="client-logo1 mt-20"></div>
+        <div class="client-logo-box"><img src="images/vmr.png" alt="VMR Logo" class="client-logo mb-10"></div>
+        <div class="client-logo-box"><img src="images/chen jewellers.png" alt="Chen Jewellers Logo" class="client-logo mt-5 w-[200px]"></div>
         <div class="client-logo-box"><img src="images/nandus.png" alt="Nandus Logo" class="client-logo"></div>
         <div class="client-logo-box"><img src="images/dma.png" alt="DMA Logo" class="client-logo"></div>
       </div>

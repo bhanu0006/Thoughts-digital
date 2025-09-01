@@ -8,7 +8,7 @@
 /* Navbar */
 .navbar {
   background: #0051bc;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 5px rgba(0,0,0,0.1);
 }
 
 /* Navbar Links Hover Animation */
@@ -35,6 +35,12 @@
 .logo img {
   display: block;
   height:48vh;
+}
+@media (max-width: 640px) {
+  .logo img {
+    height: 30vh; /* smaller height only on mobile */
+    margin-left:-16px;
+  }
 }
 
 /* Hero Section */
@@ -152,7 +158,7 @@
     width: 15%; /* Slightly larger on mobile for visibility */
   }
   .main-img {
-    max-width: 55%; /* Unchanged */
+    max-width: 55%/* Unchanged */
   }
 }
 
@@ -273,7 +279,7 @@
   padding: 0 12px;
   font-size: 18px;
   background-image: linear-gradient(135deg, rgba(245, 245, 245, 0.4) 0%, rgba(240, 240, 240, 0.15) 100%); /* Stronger sheen */
-  transition background :0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition  :0.3s ease, background transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .toggle-btn:hover {
@@ -305,7 +311,8 @@
   cursor: pointer;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Minimal shadow */
   background-image: linear-gradient(135deg, rgba(245, 245, 245, 0.35) 0%, rgba(240, 240, 240, 0.1) 100%); /* Glassy sheen */
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
+  background :0.3s ease, box-shadow 0.3s ease;
   animation: glow 4s ease-in-out infinite; /* Subtle glass glow */
 }
 
@@ -584,7 +591,8 @@
 
 /* Icon Wrapper */
 .icon-wrapper {
-  transition: transform 0.4s ease, background 0.4s ease;
+  transition: transform 0.4s ease;
+  background: 0.4s ease;
 }
 
 /* CTA Button */
@@ -596,7 +604,7 @@
 
 .cta-button:hover, .cta-button:active {
   transform: scale(1.15);
-  box-shadow:  JwtAssistant: 0 12px 24px rgba(0, 0, 0, 0.2);
+  box-shadow:  JwtAssistant 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* Ripple Effect on CTA */
@@ -648,6 +656,20 @@
   overflow: hidden;
 }
 
+/* Center and style the title */
+.paint-title {
+  text-align: center;
+}
+
+/* Main clients section */
+.main-clients {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Match gap with clients-track for consistency */
+  flex-wrap: wrap;
+}
+
 /* Row styling */
 .clients-row {
   position: relative;
@@ -658,10 +680,10 @@
 
 /* Marquee track */
 .clients-track {
-  display: inline-flex; /* Changed to inline-flex for smoother marquee */
+  display: inline-flex; /* Smooth marquee */
   gap: 2rem;
-  animation: marquee 19s linear infinite; /* Increased duration for full visibility */
-  will-change: transform; /* Smoother + faster load */
+  animation: marquee 19s linear infinite; /* Smooth scrolling */
+  will-change: transform; /* Optimize performance */
 }
 
 /* Pause marquee on hover */
@@ -672,47 +694,77 @@
 /* Box styling */
 .client-logo-box {
   flex: 0 0 auto;
-  width: 150px;
-  height: 120px;
+  width: 180px; /* Larger width */
+  height: 140px; /* Larger height */
   display: flex;
   align-items: center;
   justify-content: center;
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease;
+  overflow: hidden;
 }
 
 .client-logo-box:hover {
   transform: scale(1.05);
 }
 
-/* Logo styling */
+/* Fit logo neatly inside the box */
 .client-logo {
-  max-width: 150%;
-  max-height: 170%;
-  transition: transform 0.3s ease;
-  image-rendering: -webkit-optimize-contrast; /* Sharpen logos */
+  max-width: 150%; /* Fill more of the box */
+  max-height: 210%; /* Fill more of the box */
+  object-fit: contain;
+  display: block;
 }
 
 /* Keyframes - scroll half the track for seamless loop */
 @keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(calc(-100% / 2)); } /* Scroll exactly one set */
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 2)); /* Scroll exactly one set */
+  }
 }
 
 /* Responsive for mobile */
 @media (max-width: 768px) {
+  .paint-title {
+    font-size: 1.75rem; /* Smaller title for mobile */
+  }
+
+  .main-clients {
+    gap: 1.5rem; /* Match clients-track gap for mobile */
+  }
+
   .clients-row {
     height: 100px;
   }
+
   .client-logo-box {
     width: 100px;
     height: 80px;
   }
+
   .clients-track {
     gap: 1.5rem;
-    animation-duration: 30s; /* Adjusted for mobile, ensures full visibility */
+    animation-duration: 30s; /* Slower for mobile to ensure visibility */
+  }
+}
+
+@media (max-width: 480px) {
+  .client-logo-box {
+    width: 80px; /* Even smaller for very small screens */
+    height: 60px;
+  }
+  .client-logo1 {
+    margin-top:10px;
+}
+
+  .clients-track {
+    gap: 1rem;
+    animation-duration: 25s; /* Adjust for smaller screens */
   }
 }
 
