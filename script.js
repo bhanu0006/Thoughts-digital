@@ -214,25 +214,13 @@ getStartedBtnMobile.addEventListener("click", () => {
 //whatsapp
 
 function openWhatsApp() {
-    let phone = "+918019627590"; // change to your number
-    let message = "Hello, I'm interested in ThoughtsMedia Digital services!";      // optional message
+  const phone = "+918019627590"; // Your WhatsApp number
+  const message = "Hello, I'm interested in ThoughtsMedia Digital services!"; // Custom message
+  const webLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
 
-    // Try to open WhatsApp app (mobile/desktop)
-    let appLink = `whatsapp://send?phone=${phone}&text=${encodeURIComponent(message)}`;
-    let webLink = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
-
-    // Create a hidden iframe to trigger WhatsApp app
-    let iframe = document.createElement("iframe");
-    iframe.style.display = "none";
-    iframe.src = appLink;
-    document.body.appendChild(iframe);
-
-    // If app not installed, after 1s → fallback to web
-    setTimeout(() => {
-      window.open(webLink, "_blank");
-      document.body.removeChild(iframe);
-    }, 1000);
-  }
+  // Open WhatsApp link in a new tab/window
+  window.open(webLink, "_blank");
+}
 
 
   //why digital marketing is need.
