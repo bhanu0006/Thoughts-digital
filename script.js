@@ -202,13 +202,20 @@ contactForm.addEventListener("submit", (e) => {
   contactModal.classList.add("hidden");
 });
 
+// Mobile Get Started Button
+const getStartedBtnMobile = document.getElementById("getStartedBtnMobile");
+
+getStartedBtnMobile.addEventListener("click", () => {
+  contactModal.classList.add("active");
+  contactModal.classList.remove("hidden");
+});
 
 
 //whatsapp
 
 function openWhatsApp() {
-    let phone = "919876543210"; // change to your number
-    let message = "Hello";      // optional message
+    let phone = "+918019627590"; // change to your number
+    let message = "Hello, I'm interested in ThoughtsMedia Digital services!";      // optional message
 
     // Try to open WhatsApp app (mobile/desktop)
     let appLink = `whatsapp://send?phone=${phone}&text=${encodeURIComponent(message)}`;

@@ -59,6 +59,7 @@
   position: relative; /* Reference for absolute positioning of icons */
 }
 
+
 /* Floating images */
 .float-img {
   position: absolute;
@@ -759,7 +760,7 @@
     height: 60px;
   }
   .client-logo1 {
-    margin-top:10px;
+    margin-top:7px !important;
 }
 
   .clients-track {
