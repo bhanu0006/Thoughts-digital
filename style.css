@@ -31,6 +31,37 @@
   width: 100%;
 }
 
+/* Target nav-links on mobile when visible (hidden class removed) */
+@media (max-width: 767px) {
+  .nav-links:not(.hidden) {
+    border-radius: 0 0 0px 35px; /* Rounded corners only on bottom-left and bottom-right */
+    overflow: hidden; /* Ensures content respects border radius */
+    width:25%;
+  }
+
+  /* Center text within list items */
+  .nav-links li {
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically (if needed) */
+    text-align: center; /* Fallback for older browsers */
+  }
+
+  .nav-links a {
+    display: flex;
+    justify-content: center; /* Center text within the anchor */
+    align-items: center; /* Center text vertically within the anchor */
+    width: 100%; /* Ensure full width for centering */
+    padding: 10px 0; /* Add padding for better spacing */
+    text-align: center; /* Fallback centering */
+  }
+}
+
+/* Ensure hover effect applies to centered text */
+.nav-links a:hover {
+  color: #d1d5db; /* Matches hover:text-gray-200 */
+}
+
 /* Logo */
 .logo img {
   display: block;
